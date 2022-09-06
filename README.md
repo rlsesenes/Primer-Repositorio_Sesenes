@@ -9,3 +9,6 @@ Esta linea representa el primer commit por terminal a un repositorio remoto en g
 Esta linea representa el segunfo commit por terminal al repositorio remoto por github
 
 Esta linea representa el primer commit por github desktop con interdaz visual
+
+
+Esta linea representa un commit por terminal en la carpeta Git para ejercitar git pull en githun desktop
