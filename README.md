@@ -13,3 +13,5 @@ Esta linea representa el primer commit por github desktop con interdaz visual
 
 Esta linea representa un commit por terminal en la carpeta Git para ejercitar git pull en githun desktop
 ESta linea representa el uso de Sourcecontrol para manejo de repositorios con Visual Studio Code _  segundo
+
+Este es el tercer uso de sourceontrol para manejo de repositorios en visual studio code_segundo 
