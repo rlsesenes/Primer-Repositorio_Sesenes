@@ -1,0 +1,13 @@
+flow1-NodeRed
+
+introducción 
+
+El flow 1 representa el primer ejercicio a realizar con NodeRed el cual consiste en conectar un nodo Inject con un nodo Debug  y automatizarlo para que genere un TimeStamp cada 1 s. Esta acción permite demostrar el uso de la pestaña Debug 
+
+Material Necesario 
+
+- Ubuntu 20.04
+- NodeJs 
+   -NPM
+   -NodeRed 
+   
