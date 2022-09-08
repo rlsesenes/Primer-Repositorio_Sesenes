@@ -1,0 +1,73 @@
+Flow4 Graficar datos obtenidos
+
+Introducción
+
+Se obtendran datos de temperatura y humedad y se graficará  recibira información por mqtt y gráficará dicha información 
+
+
+Material de Referencia 
+  
+  En los siguientes enlaces puedes encontrar los cursos en la plataforma de edu.codigoiot.com que complementan lo aprendido en clase 
+
+	- Instalación de Virtual Box y Ubuntu 20.04
+	- Instalación de NodeREd
+	- Introducción a NodeRed 
+	- Instalacion de github desketop y visual studio
+	- Introducción a NodeRed 
+
+Requisitos necesarios previo a ejecutar NodeRed 
+	  - Instalacion de NodeJs V 16.17 oLTS
+	  -Intalación de NodeRed realizada por NPM usando  		   la version 3.0.2
+
+Instrucciones de operación 
+
+Se graficarán los siguientes datos:
+
+	- enviar un json por MQTT
+	- se establecerán ID, temp, hum 
+
+mosquitto_pub -h localhost -t codigoIoT/Mor/mqtt/flow4 -m '{"ID":"Sesenes","temp":21,"hum":53}'
+
+
+cada nodo a la salida genera un objeto msg que se compone de las siguienes variables:
+
+	-mqs
+	-msg.payload
+	-msg. msgid
+
+puede incluir otras variables  y normalmente la variable msg.topic y msg.label
+
+
+
+se realiza la configuracion de los nodos de funcion  introduciendo en el bloque el siguiente comando 
+
+msg.payload = msg.payload.temp;
+msg.topic = "Temperatura";
+return msg;
+
+esta operación se realiza para la temperatura 
+
+
+Resultados 
+
+Se realizo la configuración de los nodos de funcion, json y los nodos de medición a la salida estableciendo grupo  y subgrupos y configurandolos para cada nodo de salida. Se establecio en el nodo de envio de señal el host 1883 para poder realizar el envio de datos de terminal lo cual permitió obtener los gráficos historicos en el flow4 en la dirección http://localhost:1880/ui/#!/1?socketid=E1U2IacjdnwbEDV7AAAF
+
+Se modifico el comportamiento del grafico siguiendo las siguientes instrucciónes:
+
+sesenes@sesenes-VirtualBox:~$ mosquitto_pub -h localhost -t codigoIoT/Mor/mqtt/flow4 -m '{"ID":"Sesenes","temp":21,"hum":53}'
+sesenes@sesenes-VirtualBox:~$ mosquitto_pub -h localhost -t codigoIoT/Mor/mqtt/flow4 -m '{"ID":"Sesenes","temp":21,"hum":53}'
+sesenes@sesenes-VirtualBox:~$ mosquitto_pub -h localhost -t codigoIoT/Mor/mqtt/flow4 -m '{"ID":"Sesenes","temp":21,"hum":53}'
+sesenes@sesenes-VirtualBox:~$ mosquitto_pub -h localhost -t codigoIoT/Mor/mqtt/flow4 -m '{"ID":"Sesenes","temp":21,"hum":53}'
+sesenes@sesenes-VirtualBox:~$ mosquitto_pub -h localhost -t codigoIoT/Mor/mqtt/flow4 -m '{"ID":"Sesenes","temp":17,"hum":76}'
+sesenes@sesenes-VirtualBox:~$ mosquitto_pub -h localhost -t codigoIoT/Mor/mqtt/flow4 -m '{"ID":"Sesenes","temp":23,"hum":85}'
+sesenes@sesenes-VirtualBox:~$ 
+
+
+
+Creditos 
+
+Desarrollado por Roy Lopez 
+
+
+
+
