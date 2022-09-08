@@ -25,5 +25,20 @@ Requisitos necesarios previo a ejecutar NodeRed
 - Instalacion de NodeJs V 16.17 oLTS
 -Intalación de NodeRed realizada por NPM usando la version 3.0.2
 
+Instrucciones de operación 
+
+Para ejecutar flow 1 es necesatio abrir la pestaña debug en la cual al enviar una señal de entrada emite un formato de tiempo 
+
+
+Resultados 
+
+Se muestra captura de pantalla 
+
+Evidencias 
+
+
+Creditos 
+
+Desarrollado por Roy Lopez 
 
    

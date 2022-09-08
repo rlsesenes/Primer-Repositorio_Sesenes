@@ -1,0 +1,45 @@
+flow3-NodeRed
+
+Introducción 
+
+El flow 3 retoma el codigo del flow 2 mediante su exportación en formato json para poder hacer el envio mediante el dahboard http://localhost:1880/ui
+
+Material Necesario 
+
+- Ubuntu 20.04
+- NodeJs 
+   -NPM
+   -NodeRed 
+   -Nodos Dashboard
+  
+  Material de Referencia 
+  
+  En los siguientes enlaces puedes encontrar los cursos en la plataforma de edu.codigoiot.com que complementan lo aprendido en clase 
+
+- Instalación de Virtual Box y Ubuntu 20.04
+- Instalación de NodeREd
+- Introducción a NodeRed 
+- Instalacion de github desketop y visual studio
+- Introducción a NodeRed 
+
+Requisitos necesarios previo a ejecutar NodeRed 
+- Instalacion de NodeJs V 16.17 oLTS
+-Intalación de NodeRed realizada por NPM usando la version 3.0.2
+
+Instrucciones de operación 
+
+Para ejecutar flow 3 se requiere en primera instancia importar el codigo json del flow2 posterior a ello se anexa un nodo text del nodo node-red-dasbhoard donde es necesario asignar un tab y un grupo nombrados como Flow3 y Fecha respectivamente. Lo anterior permite la configuración del nodo de texto para la impresión en la salida http://localhost:1880/ui donde se visualizará la fecha 
+
+Resultados 
+
+El resultado es un formato horario desplegado en una página con dirección http://localhost:1880/ui donde se muestra el nombre del tab y la fecha en tiempo real 
+
+
+
+
+
+Creditos 
+
+Desarrollado por Roy Lopez 
+
+   

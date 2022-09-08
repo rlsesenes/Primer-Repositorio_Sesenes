@@ -1,0 +1,55 @@
+flow2-NodeRed
+
+Introducción 
+
+El flow 2 retoma el codigo del flow1 mediante la exportación de sus nodos en json para mostrar la fecha en un formato legible 
+
+Material Necesario 
+
+- Ubuntu 20.04
+- NodeJs 
+   -NPM
+   -NodeRed 
+   -Nodos Dashboard
+  
+  Material de Referencia 
+  
+  En los siguientes enlaces puedes encontrar los cursos en la plataforma de edu.codigoiot.com que complementan lo aprendido en clase 
+
+- Instalación de Virtual Box y Ubuntu 20.04
+- Instalación de NodeREd
+- Introducción a NodeRed 
+- Instalacion de github desketop y visual studio
+- Introducción a NodeRed 
+
+Requisitos necesarios previo a ejecutar NodeRed 
+- Instalacion de NodeJs V 16.17 oLTS
+-Intalación de NodeRed realizada por NPM usando la version 3.0.2
+
+Instrucciones de operación 
+
+Para ejecutar flow 2 se requiere en primera instancia importar el codigo json del flow1 posterior a ello se anexa un nodo de funcion para modificar mediante código el formato de fecha y asi enviar la señal a un debug
+
+
+Resultados 
+
+Al ingresar el código 
+
+// Lo que está después de “//” son comentarios
+// Crea un objeto Date a partir del payload enviado por timestamp
+var date = new Date(msg.payload);
+// Cambia el payload para que sea una fecha con formato
+msg.payload = date.toString();
+// Regresa el mensaje para que se envíe al sigueinte nodo
+return msg;
+
+Este permitira mediante la funcion var date almacenar new date(msg.payload) la cual pemitira la transformación de la variable fecha mediante un date.toString()
+
+
+
+
+Creditos 
+
+Desarrollado por Roy Lopez 
+
+   
