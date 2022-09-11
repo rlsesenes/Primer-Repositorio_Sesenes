@@ -51,11 +51,16 @@ observese que el primero hace enfasis en la variable temperatura cambiando el ms
 
 Resultados 
 
+Para el mqtt por localhost solicitar dentro de la consola  con mosquitto_pub -h localhost -m 
+
+mosquitto_pub -h localhost -t codigoIoT/Mor/mqtt/flow5 -m '{"ID":"Sesenes","temp":21,"hum":53}'
 
 Se desarrollo el flow5 obteniendo graficos por mqtt y API y se grafican en tiempo real a través del dashbord que redirecciona a  la siguente dirección http://localhost:1880/ui/#!/2?socketid=YZX727ye7QjazU8cAAAB 
 
 
 En ella es posible observar los parametros historicos para temperatura y humedad 
+
+
 
 
 
