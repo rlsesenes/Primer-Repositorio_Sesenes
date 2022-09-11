@@ -1,0 +1,68 @@
+flow5-NodeRed-ClimaAPI 
+
+En el presente repositorio se muestra el procedimiento para obtener la información climática de una determinada region empleando APO desde la pagina openweathemap.org 
+
+Requerimientos preliminares 
+
+
+1. Iniciar Node-Red
+2. Agregar al flow un enviador de infromación
+- Enviar la Información por JSON
+3. Agregar al flow un escuchador de información
+4. Agregar broker publico- nslookup broker.hivemq.com con IP 35.156.177.225 empleando el topic codigoIoT/flow5/mqtt/clima
+
+
+Metodología 
+
+ partir del Flow 4 se generará el Flow 5 se requere tener una cuenta en OpenWeatherMap.org, se observa el comportamiento dinámico de los gauges empleados sin necesidad del uso de terminal 
+
+
+Una vez creada la cuenta en OpenWeather se copia el codigo 
+
+	https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}&units=metric	
+	
+	el cual solicita de forma especfica 
+	
+	- lat:20.446475397953133
+	- lon: -97.32002418115282 
+	- API key: 43eaee949577894967a79886768d9da8
+	
+Una vez teniendo la ubicación se procede a cambiar la información en la dirección anterior
+
+https://api.openweathermap.org/data/3.0/onecall?lat=20.446475397953133 &lon=-97.32002418115282&exclude=hourly,daily&appid=f53c198b0999983224fecbb85bfac731
+
+https://api.openweathermap.org/data/2.5/weather?lat=20.446475397953133&lon=-97.32002418115282&appid=43eaee949577894967a79886768d9da8&units=metric	
+
+
+
+Se agregan nuevos nodos  de entrada de señal mqtt para envío de señal de los valores de temperatura y humedad los cuales son intermpretados en un json hacia los nodos de función para temperatura y humedad obtenidos por API para lo cual es necesario introducir en su configuracion el siguiente codigo en message: 
+
+
+msg.topic = msg.payload.id;
+msg.payload = msg.payload.temp;
+
+return msg;
+msg.topic = msg.payload.id;
+msg.payload = msg.payload.hum;
+return msg;
+
+observese que el primero hace enfasis en la variable temperatura cambiando el msg.payload a una asignación msg.payload. temp. como principal diferencia con los valores obtenidos mediante la consola en mqtt de giaul forma sucede para la humedad es importante respetar el orden descrito en el código. De igual forma la información obtenida por API es graficada empleando el nodo correspondiente para ello. 
+
+
+Resultados 
+
+
+Se desarrollo el flow5 obteniendo graficos por mqtt y API y se grafican en tiempo real a través del dashbord que redirecciona a  la siguente dirección http://localhost:1880/ui/#!/2?socketid=YZX727ye7QjazU8cAAAB 
+
+
+En ella es posible observar los parametros historicos para temperatura y humedad 
+
+
+
+
+
+
+
+
+
+
