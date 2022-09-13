@@ -6,21 +6,32 @@ Emplear estos comandos
 
 sudo apt-get install -y adduser libfontconfig1
 wget https://dl.grafana.com/enterprise/release/grafana-enterprise_9.1.3_amd64.deb
+
+Para ejecutar grafana emplear el código: 
+
+sudo /bin/systemctl start grafana-server
+
 sudo dpkg -i grafana-enterprise_9.1.3_amd64.deb
+sudo dpkg -i grafana-enterprise_9.1.3_amd64.deb.3
 
 
-Una vez instalado dirigirse a grafana localhost:3000 iniciar sesion por primera vez con user admin password admin y cambiar contraseña predeterminada 
+Para deterner grafana se emplea el siguiente codigo
+
+sudo /bin/systemctl stop grafana-server
 
 
-despues de ello agregar panel en la parte superior derecha de la interfaz grafana
+2. Una vez instalado dirigirse a grafana localhost:3000 iniciar sesion por primera vez con user admin password admin y cambiar contraseña predeterminada a dilomi2508
 
 
-se requiere agregar una fuente de información haciendo clic en configuracion --> Data Source 
+3. Despues de ello  se agrega un nuevo panel  en la parte superior derecha de la interfaz grafana
+
+
+4. Se requiere agregar una fuente de información haciendo clic en configuracion --> Data Source 
 del menu seleccionar MySQl
 
 se configura el localhost: 3306
-database codigoIoT
-user admin pass dilomi2508 de grafana fue creada en la clase anterior verificar...
+database codigoIoT_1
+user Sesenes pass dilomi2508 de grafana fue creada en la clase anterior verificar...
 
 
 time zon cd mx -05:00
